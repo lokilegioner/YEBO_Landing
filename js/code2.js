@@ -1,20 +1,29 @@
 let
-    image = document.getElementById('bicycle-wheel'),
-    computed = window.getComputedStyle(image, null),
-    block = document.getElementById('block-wheel'),
+    
+    block = document.querySelector('.bg-title-image'),
+    computed = window.getComputedStyle(block, null),
     img = new Image(),
+    ratio = 1,
+    value = 0,
+    minWidthImage = 800,
     widthWindow = document.documentElement.clientWidth;
 
     function OnResize() {
-        computedRealTime = window.getComputedStyle(image, null);
-        block.style.height = computedRealTime.getPropertyValue('height');
         widthWindow = document.documentElement.clientWidth;
+        if (widthWindow > minWidthImage) {
+            block.style.height = widthWindow / ratio + 'px';
+            block.style.backgroundSize = widthWindow + 'px';
+            block.style.backgroundPositionX = 0;
+        } else {
+            ReposerImage();
+            block.style.backgroundSize = minWidthImage + 'px';
+            block.style.height = minWidthImage / ratio + 'px';
+        }
     }
 
     function ReposerImage() {
-        if (widthWindow < 843) {
-            image.style.left = (image.width - widthWindow) / 2 * -1 + 'px';
-        }
+        value = (minWidthImage - widthWindow) / 2 * -1;
+        block.style.backgroundPositionX = value + 'px';
     }
 
     // after loading
@@ -28,17 +37,13 @@ let
 
         widthImg = img.naturalWidth; //get size of file image
         heightImg = img.naturalHeight; //get size of file image
-
-        block.style.height = computed.getPropertyValue('height'); //set block Height on after load
-        w = document.documentElement.clientWidth;
+        ratio = widthImg / heightImg;
 
         OnResize();
-        ReposerImage();
     }
 
     window.addEventListener('resize', function() {
         OnResize();
-        ReposerImage();
     });
 
 
