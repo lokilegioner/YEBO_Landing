@@ -37,6 +37,32 @@ a:hover {
     color: rgb(134, 134, 134);
 }
 
+.button {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #94979a;
+    color: #94979a;
+    text-transform: uppercase;
+    width: 80%;
+    height: 50px;
+    padding: 10px;
+}
+
+.button-go {
+    display: inline-block;
+    background-color: #64c29e;
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+    width: 27%;
+    height: 73px;
+    padding: 9px;
+}
+
+.button-go:hover {
+    color: white;
+}
+
 p {
     font-family: "Lato";
     color: #848789;
@@ -52,8 +78,30 @@ h1 {
     letter-spacing: 5px;
 }
 
+.claim {
+    font-size: 24px;
+    font-family: "Lato";
+    color: rgb(132, 135, 137);
+    font-style: italic;
+    line-height: 1.417;
+}
+
+.user-email {
+    display: inline;
+    border: 1px solid rgb(211, 215, 217);
+    width: 70%;
+    height: 73px;
+    padding-left: 20px;
+    color: #929292;
+    font-style: italic;
+}
+
 .bg-light-gray {
     background-color: #f7f7f7;
+}
+
+.bg-dark-gray {
+    background-color: #282f35;
 }
 
 .title-logo {
@@ -69,19 +117,103 @@ h1 {
 .vintage-oliva {
     font-size: 16px;
     color: rgb(132, 135, 137);
-    line-height: 1.875;
+    line-height: 1.475;
     margin: 0;
-  }
+}
+
+.logo-above-img {
+    display: block;
+    width: 15%;
+    top: 45%;
+    left: 43%;
+    position: absolute;
+}
+
+.logo-above-img-bicycles {
+    width: 20%;
+}
+
+.shop-now {
+    width: 30%;
+    /* display: none; */
+    user-select: none;
+}
+
+.decor-line {
+    display: inline-block;
+    margin: 10px 0;
+    margin-left: 10px;
+    background-color: rgba(53, 55, 56, 0.2);
+    width: 50px;
+    height: 1px;
+}
+
+.line {
+    background-color: rgba(53, 55, 56, 0.2);
+    position: absolute;
+    left: 1309px;
+    top: 1614px;
+    width: 50px;
+    height: 1px;
+    z-index: 142;
+}
+  
+
+.arrow-down {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: -8px;
+    left: 50%;
+    transform: rotate(45deg);
+    background-color:white;
+    z-index: 2;
+}
+
+.sl {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+.comments {
+    font-size: 18px;
+    font-family: "Lato";
+    color: rgb(132, 135, 137);
+    font-style: italic;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.to-front-plane {
+    background-color: rgba(100, 194, 158, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* .show-icon:hover ~ .shop-now {
+    display: inline;
+} */
+  
 
 @media (min-width: 1368px) {
     .vintage-oliva {
         margin: 30px 40px;
     }
+    .sl {
+        width: 50%
+    }
 }
 
 @media (min-width: 1600px) {
     .vintage-oliva {
-        margin: 50px 50px;
+        margin: 50px 70px;
+    }
+    .decor-line {
+        margin-bottom: 70px;
     }
 }
 
@@ -89,4 +221,138 @@ h1 {
     li {
         display: inline-block;
     }
+    .comments {
+        font-size: 24px;
+        line-height: 1.417;
+    }
+}
+
+@media (min-width: 720px) {
+    .sl {
+        width: 60%;
+    }
+    .button {
+        display: inline-block;
+        background: transparent;
+        border: 2px solid #94979a;
+        color: #94979a;
+        text-transform: uppercase;
+        width: 300px;
+        height: 50px;
+        padding: 10px;
+    }
+    .button-go {
+        display: inline-block;
+        background-color: #64c29e;
+        color: white;
+        font-size: 30px;
+        text-transform: uppercase;
+        width: 120px;
+        height: 73px;
+        padding: 9px;
+    }
+    .user-email {
+        display: inline;
+        border: 1px solid rgb(211, 215, 217);
+        width: 404px;
+        height: 73px;
+        padding-left: 20px;
+        color: #929292;
+        font-style: italic;
+    }
+}
+
+/* Slick Slider class rewrite*/
+
+.slick-slide img {
+    display: inline;
+}
+
+/* Dots slick slider rewrite classes*/
+
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    /* bottom: -25px; */
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: -40px;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 5px;                      /* width all dots */
+    height: 20px;
+    margin: 5px 10px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+
+    cursor: pointer;
+
+
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 50px;                      /*size dots*/
+    line-height: 10px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 10px;
+    height: 10px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: 0.5;
+    color: #cdcdcd;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: #a9afb3;
 }

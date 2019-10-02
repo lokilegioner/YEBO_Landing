@@ -1,5 +1,8 @@
 let
-    
+
+    iconToShow = new Image(),
+    gallariesImg = document.querySelectorAll('.bg-selected'),
+
     block = document.querySelector('.bg-title-image'),
     computed = window.getComputedStyle(block, null),
     img = new Image(),
@@ -27,6 +30,24 @@ let
     }
 
     // after loading
+
+    iconToShow.src = '../image/icon-shop-now.png';
+    iconToShow.classList.add('logo-above-img');
+    iconToShow.classList.add('shop-now');
+
+    plane = document.createElement('div');
+    plane.classList.add('to-front-plane');
+
+    gallariesImg.forEach(element => {
+        element.addEventListener('mouseover', function() {
+            element.appendChild(plane);
+            element.appendChild(iconToShow);
+        });
+        element.addEventListener('mouseout', function() {
+            element.removeChild(iconToShow);
+            element.removeChild(plane);
+        });
+    });
 
     document.body.onload = function() {
 
